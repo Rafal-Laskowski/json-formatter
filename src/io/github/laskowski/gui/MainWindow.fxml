@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="io.github.laskowski.gui.MainWindowController">
+  <children>
+    <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="804.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <BorderPane minHeight="44.0" prefHeight="109.0" prefWidth="800.0">
+          <left>
+            <VBox prefHeight="58.0" prefWidth="360.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#loadFile" prefWidth="350.0" text="Load .json file">
+                  <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" />
+                  </VBox.margin>
+                </Button>
+              </children>
+            </VBox>
+          </left>
+          <right>
+            <VBox prefHeight="58.0" prefWidth="360.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#copyToClipboard" prefWidth="350.0" text="Copy to clipboard" />
+                <Button mnemonicParsing="false" onAction="#saveFile" prefWidth="350.0" text="Save to file">
+                  <VBox.margin>
+                    <Insets top="10.0" />
+                  </VBox.margin>
+                </Button>
+              </children>
+            </VBox>
+          </right>
+          <top>
+            <BorderPane prefHeight="27.0" prefWidth="800.0">
+              <right>
+                <HBox prefHeight="27.0" prefWidth="360.0">
+                  <children>
+                    <Label text="length:">
+                      <HBox.margin>
+                        <Insets left="10.0" right="10.0" fx:id="x2" />
+                      </HBox.margin>
+                    </Label>
+                    <Label fx:id="lengthLabel" HBox.margin="$x2" />
+                  </children>
+                </HBox>
+              </right>
+            </BorderPane>
+          </top>
+        </BorderPane>
+      </bottom>
+      <center>
+        <ListView fx:id="rightArea" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="350.0">
+          <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+          </BorderPane.margin>
+        </ListView>
+      </center>
+      <left>
+        <HBox prefHeight="695.0" prefWidth="423.0">
+          <TextArea fx:id="leftArea" onKeyPressed="#format" onKeyReleased="#format" onKeyTyped="#format"
+                    prefHeight="695.0" prefWidth="400.0" wrapText="true" HBox.margin="$x1"/>
+          <Separator orientation="VERTICAL" prefHeight="200.0" HBox.margin="$x1"/>
+        </HBox>
+      </left>
+    </BorderPane>
+  </children>
+</AnchorPane>
